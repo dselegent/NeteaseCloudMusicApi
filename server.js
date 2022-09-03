@@ -139,7 +139,7 @@ async function consturctServer(moduleDefs) {
    * CORS & Preflight request
    */
   app.use((req, res, next) => {
-    if (req.path !== '/' && !req.path.includes('.')) {
+    // if (req.path !== '/' && !req.path.includes('.')) {
       res.set({
         'Access-Control-Allow-Credentials': true,
         'Access-Control-Allow-Origin': '*',
@@ -147,7 +147,7 @@ async function consturctServer(moduleDefs) {
         'Access-Control-Allow-Methods': 'PUT,POST,GET,DELETE,OPTIONS',
         'Content-Type': 'application/json; charset=utf-8',
       })
-    }
+    // }
     next();
    // req.method === 'OPTIONS' ? res.status(204).end() : next()
   })
